@@ -23,7 +23,6 @@ def spark_operator():
         do_xcom_push=True,
         params={"app_name": "spark-pi"},
         kubernetes_conn_id="kubernetes_default",
-        attach_log=True,
     )
 
     submit_sensor = SparkKubernetesSensor(
