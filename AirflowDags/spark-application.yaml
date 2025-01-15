@@ -12,6 +12,8 @@ spec:
   mainApplicationFile: local:///opt/spark/examples/src/main/python/pi.py
   sparkVersion: 3.5.3
   driver:
+    labels:
+      version: 3.5.3
     cores: 1
     memory: 512m
     serviceAccount: spark-operator-spark
