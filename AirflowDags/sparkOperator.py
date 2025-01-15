@@ -22,6 +22,7 @@ def spark_operator():
         application_file="spark-application.yaml",
         do_xcom_push=True,
         params={"app_name": "spark-pi"},
+        kubernetes_conn_id="kubernetes_default",
     )
 
     submit_sensor = SparkKubernetesSensor(
