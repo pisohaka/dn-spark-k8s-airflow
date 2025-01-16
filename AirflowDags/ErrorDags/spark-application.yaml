@@ -12,29 +12,12 @@ spec:
   imagePullPolicy: Never
   mainApplicationFile: local:///opt/spark/examples/src/main/python/error_app.py
   sparkVersion: 3.5.3
-  volumes:
-    - name: xcom
-      emptyDir: {}  
   driver:
     labels:
       version: 3.5.3
     cores: 1
     memory: 512m
     serviceAccount: spark-operator-spark
-    volumeMounts:
-      - name: xcom
-        mountPath: /airflow/xcom
-    sidecars:
-      - name: airflow-xcom-sidecar
-        image: alpine
-        command: ["sh", "-c", 'trap "exit 0" INT; while true; do sleep 1; done;']
-        volumeMounts:
-          - name: xcom
-            mountPath: /airflow/xcom
-        resources:
-          requests:
-            cpu: "1m"
-            memory: "10Mi"
   executor:
     instances: 1
     cores: 1
