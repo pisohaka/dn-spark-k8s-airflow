@@ -23,6 +23,8 @@ def spark_operator_error():
         do_xcom_push=False,
         params={"app_name": "spark-pi"},
         kubernetes_conn_id="kubernetes_default",
+        log_events_on_failure=True,
+        delete_on_termination=True,
     )
 
     submit
