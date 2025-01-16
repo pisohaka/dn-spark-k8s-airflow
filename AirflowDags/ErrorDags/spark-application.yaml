@@ -9,7 +9,7 @@ spec:
   timeToLiveSeconds: 1800
   mode: cluster
   image: "spark_with_error:latest"
-  imagePullPolicy: Always
+  imagePullPolicy: IfNotPresent
   mainApplicationFile: local:///opt/spark/examples/src/main/python/error_app.py
   sparkVersion: 3.5.3
   volumes:
