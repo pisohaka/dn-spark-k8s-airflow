@@ -8,7 +8,7 @@ spec:
   pythonVersion: "3"
   timeToLiveSeconds: 1800
   mode: cluster
-  image: "spark_with_error:latest"
+  image: "spark-with-error:test"
   imagePullPolicy: IfNotPresent
   mainApplicationFile: local:///opt/spark/examples/src/main/python/error_app.py
   sparkVersion: 3.5.3
