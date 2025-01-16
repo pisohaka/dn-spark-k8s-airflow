@@ -25,6 +25,4 @@ def spark_operator():
         kubernetes_conn_id="kubernetes_default",
     )
 
-    submit
-
 spark_operator()
