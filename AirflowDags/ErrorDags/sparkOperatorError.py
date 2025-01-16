@@ -14,8 +14,6 @@ from airflow.providers.cncf.kubernetes.sensors.spark_kubernetes import (
     start_date= datetime(2024, 3, 1),
 )
 def spark_operator_error():
-
-
     submit = SparkKubernetesOperator(
         task_id="submit",
         namespace="airflow",
@@ -27,8 +25,5 @@ def spark_operator_error():
         delete_on_termination=True,
         on_finish_action="delete_pod",
     )
-    submit
-
-
 
 spark_operator_error()
