@@ -20,18 +20,11 @@ def spark_operator_error():
         task_id="submit",
         namespace="airflow",
         application_file="spark-application.yaml",
-        do_xcom_push=True,
+        do_xcom_push=False,
         params={"app_name": "spark-pi"},
         kubernetes_conn_id="kubernetes_default",
     )
 
-    submit_sensor = SparkKubernetesSensor(
-        task_id="submit_sensor",
-        namespace="airflow",
-        application_name="{{ task_instance.xcom_pull(task_ids='submit')['metadata']['name'] }}",
-        attach_log=True,
-    )
-
-    submit >> submit_sensor
+    submit
 
 spark_operator_error()
