@@ -25,7 +25,6 @@ def spark_operator_error():
         kubernetes_conn_id="kubernetes_default",
         log_events_on_failure=True,
         delete_on_termination=True,
-        on_finish_action="delete_pod",
     )
 
 spark_operator_error()
